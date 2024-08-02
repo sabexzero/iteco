@@ -1,69 +1,73 @@
 # ITECO-task 🚀
-## О задании
-### Основные возможности
 
-1. Учет ФИО сотрудников ✅
-2. Учет подразделений, в которых числятся сотрудники ✅
+## About the Task
 
-### Ограничения
+### Main Features
 
-1. Сотрудники принимаются и увольняются. Причины увольнения не интересны ✅
-2. Сотрудники могут переводиться из подразделения в подразделение ✅
-3. Состав подразделений может меняться в любой день. Необходимо иметь возможность получить информацию о структуре компании в любой момент времени ✅
-4. Подразделения находятся в иерархической зависимости друг от друга ✅
-5. Контроль целостности данных вне задачи ✅
+1. Employee full name tracking ✅
+2. Tracking departments where employees are listed ✅
 
-### Реализованный UI
+### Constraints
 
-1. Добавление нового сотрудника в любое подразделение ✅
-2. Вывод списка всех подразделений на конкретную дату ✅
-3. Вывод сотрудников выбранного подразделения за период (задается дата начала и дата окончания, выводятся все сотрудники, которые числились в подразделении хотя бы один день в заданном периоде) ✅
+1. Employees can be hired and fired. The reasons for dismissal are not relevant ✅
+2. Employees can be transferred from one department to another ✅
+3. The composition of departments can change on any given day. It is necessary to have the ability to obtain information about the company structure at any point in time ✅
+4. Departments have a hierarchical dependency on each other ✅
+5. Data integrity control is outside the scope of this task ✅
 
-## Особые моменты реализации
-- **Иерархия**: для реализации иерархической структуры подразделений было принято решение использовать **ltree**, которое позволяет быстро работать с подобными структурами данных.
-- **Визуализация**: для визуализации структуры иерархии была выбрана библиотека [React flow](https://reactflow.dev/), благодаря ей, добавление подразделений и визуализация их структуры выглядет естественно.
-- **Пагинация**: хочется уточнить, что она реализована только на уровне бэкенда для возможного дальнейшего использования, однако на уровне фронтенда, она не была реализована.
+### Implemented UI
 
-## Технологии 🛠️
+1. Adding a new employee to any department ✅
+2. Displaying the list of all departments on a specific date ✅
+3. Displaying employees of a selected department for a period (start and end dates are specified, all employees who were listed in the department for at least one day within the specified period are displayed) ✅
+
+## Implementation Details
+
+- **Hierarchy**: To implement the hierarchical structure of departments, it was decided to use **ltree**, which allows quick operations with such data structures.
+- **Visualization**: The [React Flow](https://reactflow.dev/) library was chosen for visualizing the hierarchy structure, making the addition of departments and the visualization of their structure look natural.
+- **Pagination**: It is worth noting that pagination is implemented only at the backend level for potential future use, but it has not been implemented at the frontend level.
+
+## Technologies 🛠️
+
 - **Backend**: Spring Boot (Java)
 - **Frontend**: React
 - **Database**: PostgreSQL
 
-## Запуск проекта 🚀
+## Project Launch 🚀
 
-### Шаг 1: Установка Docker и Docker Compose
+### Step 1: Install Docker and Docker Compose
 
-Убедитесь, что Docker и Docker Compose установлены на вашем компьютере. Инструкции по установке можно найти на официальных сайтах:
+Make sure Docker and Docker Compose are installed on your computer. Installation instructions can be found on the official websites:
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
-### Шаг 2: Клонирование репозитория
+### Step 2: Clone the Repository
 
-Сначала клонируйте репозиторий с кодом проекта:
+First, clone the project repository:
 
 ```bash
 git clone https://github.com/your-repository/iteco-task.git
 cd iteco-task
 ```
 
-### Шаг 3: Настройка и запуск контейнеров
+### Step 3: Setup and Launch Containers
 
-1. Убедитесь, что ваш Docker Daemon работает.
-2. Запустите Docker Compose для создания и запуска контейнеров:
+1. Ensure your Docker Daemon is running.
+2. Start Docker Compose to create and launch the containers:
 ```bash
 docker-compose up --build
 ```
 
-### Шаг 4: Доступ к приложению
-После успешного запуска контейнеров:
+### Step 4: Access the Application
+After successfully launching the containers:
 
-- **Backend**: доступен по адресу: http://localhost:8081
-- **Frontend** доступен по адресу: http://localhost:3000
+- **Backend**: is available at: http://localhost:8081
+- **Frontend**: is available at: http://localhost:3000
+  
+### Step 5: Database Initialization
+The database will be automatically initialized using the init.sql script, which is connected to the database container.
 
-### Шаг 5: Инициализация базы данных
-База данных будет автоматически инициализирована с помощью скрипта init.sql, который подключается к контейнеру базы данных.
-
-### Примечания 📚
-- Убедитесь, что порты 8081 и 5432 не заняты другими приложениями.
-- Если вы хотите изменить конфигурацию базы данных, отредактируйте переменные окружения в docker-compose.yml.
+### Notes  📚
+- Ensure that ports 8081 and 5432 are not occupied by other applications.
+- If you want to change the database configuration, edit the environment variables in docker-compose.yml.
 
