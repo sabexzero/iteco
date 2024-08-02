@@ -25,8 +25,11 @@
 
 - **Hierarchy**: To implement the hierarchical structure of departments, it was decided to use **ltree**, which allows quick operations with such data structures.
 - **Visualization**: The [React Flow](https://reactflow.dev/) library was chosen for visualizing the hierarchy structure, making the addition of departments and the visualization of their structure look natural.
-- **Pagination**: It is worth noting that pagination is implemented only at the backend level for potential future use, but it has not been implemented at the frontend level.
 - **Swagger Documentation**: Available at: http://localhost:8081/swagger-ui/index.html
+
+## Negative aspects
+- **Pagination**: It is worth noting that pagination is implemented only at the backend level for potential future use, but it has not been implemented at the frontend level.
+- **Bugs**: Before the task was submitted, the worker counter stopped working in the nodes (On frontend level).
 
 ## Technologies 🛠️
 
