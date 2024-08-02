@@ -1,0 +1,19 @@
+.node {
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #007bff;
+    color: #ffffff;  /* Цвет текста */
+    font-size: 14px; /* Размер шрифта */
+    font-family: Arial, sans-serif; /* Шрифт текста */
+  }
+  
+  .edge {
+    stroke: #0000ff; /* Цвет связей */
+    stroke-width: 2; /* Ширина линий связей */
+  }
+  
+  .handle {
+    background-color: #00ff00; /* Цвет точек */
+  }
+  

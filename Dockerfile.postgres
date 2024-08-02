@@ -1,0 +1,7 @@
+FROM postgres:13
+
+# Install the ltree extension
+RUN apt-get update && apt-get install -y postgresql-contrib
+
+# Set up the entrypoint initialization scripts
+COPY init.sql /docker-entrypoint-initdb.d/

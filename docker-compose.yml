@@ -1,0 +1,32 @@
+services:
+  backend:
+    image: sabextech/iteco-backend:latest
+    container_name: backend
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+  frontend:
+    image: sabextech/iteco-frontend:latest
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./react-client:/app
+    command: ["npm", "start"]
+
+  db:
+    image: sabextech/iteco-postgres:latest
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: iteco
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+volumes:
+  postgres_data:
